@@ -36,7 +36,7 @@ You do **not** touch raw transcripts or individual insight files. Those are the 
 - **`02-synthesis/journey-map.md`** — regenerate the current-state founder journey. Headline + stages + cross-cutting threads + gaps + footer.
 - **`02-synthesis/story-map.md`** — regenerate the future-solution backbone from JTBDs. Headline + backbone + footer. Each activity must cite ≥1 J-ID.
 - **`02-synthesis/stakeholder-map.md`** — regenerate the actor + relationship view. Headline + actors + relationships + gaps + footer.
-- **`00-context/personas.md`** — regenerate working models grounded in evidence. Headline + persona blocks + footer.
+- **`02-synthesis/personas.md`** — regenerate working models grounded in evidence. Headline + persona blocks + footer.
 - **`02-synthesis/opportunities.md`** — regenerate design openings from insights. Headline + opportunity blocks + prioritisation + footer. Each opportunity must cite ≥1 insight ID.
 - **`02-synthesis/probes.md`** — trim to top 2–3 priorities, not per-insight detail. Synthesist handles per-insight notes; Curator handles the trim.
 - **`README.md`** "Current state of play" — refresh as delta-from-default: where we are (one paragraph), pending human input (specific bullets), pointer index (where current state actually lives).

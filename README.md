@@ -246,7 +246,7 @@ _Last updated: <date>._
 | Glossary + review queue | `00-context/glossary.md` |
 | Consent | `00-context/consent-log.md` |
 | JTBD | `02-synthesis/jobs-to-be-done.md` |
-| Living artifacts (themes, journey, story, stakeholders, personas, opportunities) | `02-synthesis/` and `00-context/personas.md` — *regenerated per `00-context/rhythm.md`* |
+| Living artifacts (themes, journey, story, stakeholders, personas, opportunities) | `02-synthesis/` — *regenerated per `00-context/rhythm.md`* |
 | Coach observations + proposed discovery-question deltas | `00-context/method-notes.md` |
 | Human reviews of any artifact | `<artifact>-review-<YYYY-MM-DD>.md` (sibling to the artifact); template at `01-research/sessions/_TEMPLATE-review.md` |
 | Decisions and process conventions | `03-decisions/decisions-log.md` |

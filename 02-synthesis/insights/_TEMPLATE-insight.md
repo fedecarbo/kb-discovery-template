@@ -1,39 +1,42 @@
-# `I-00X` [The insight as a complete claim]
+# `I-00X` — [the insight as a complete claim]
 
-> *What this file is: one cross-session atomic insight. The title IS the claim
-> (no topics or themes here). Evidence accrues over time; never rewrite an
-> existing claim — only add evidence rows and let the status reflect what the
-> evidence shows.*
+> [!NOTE]
+> **What this file is.** One cross-session atomic insight. The title is the claim — not a topic or theme. Evidence accrues over time.
 
-**Filename:** `I-00X-short-slug.md`
+> [!IMPORTANT]
+> **Never rewrite an existing claim.** Only add evidence rows and let the status reflect what the evidence shows.
 
-- **ID:** I-00X
-- **Status:** `hunch` (1 source) / `emerging` (2–3 sources + disconfirmation attempted) / `strong` (4+ sources + deliberate disconfirmation tried and failed) / `contested`
-- **Created:** [YYYY-MM-DD]
-- **Last updated:** [YYYY-MM-DD]
+- **Filename:** `I-00X-short-slug.md`.
+- **ID:** `I-00X`.
+- **Status:** `hunch` / `emerging` / `strong` / `contested`. See `02-synthesis/probes.md` for promotion rules.
+- **Created:** *YYYY-MM-DD.*
+- **Last updated:** *YYYY-MM-DD.*
 
 ---
 
 ## Plain-English claim
 
-*One paragraph for a human reader who hasn't seen the evidence yet. What the insight is saying, why it matters, written without jargon or status taxonomy. A non-researcher should read this and get the point.*
+*One paragraph for a reader who hasn't seen the evidence. What the insight is saying, why it matters — written without jargon or status taxonomy. A non-researcher should read this and get the point.*
 
 ---
 
 ## The claim
 
-[Restate the insight in 1–2 sentences. What we believe, in the user's terms. More precise / structured form of the plain-English version above — what the evidence-table is testing.]
+*Restate the insight in 1–2 sentences. What we believe, in the user's terms. A more precise, structured form of the plain-English version above — this is what the evidence table tests.*
 
 ---
 
 ## Evidence
 
-Each row is a session that supports or challenges this insight. Add to the table as new sessions come in. Never rewrite an existing row.
+Each row is a session that supports or challenges this insight. Add rows as new sessions come in.
+
+> [!IMPORTANT]
+> Never rewrite an existing row. New context goes in the note column with a date; corrections go in a new row tagged `via review <YYYY-MM-DD>`.
 
 | Session | Supports / challenges | Note + quote |
-|---|---|---|
-| 2026-05-10-participant-01 | supports | [short note]: "[quote]" |
-|  |  |  |
+| ------- | --------------------- | ------------ |
+| 2026-05-10-participant-01 | supports | *short note* — "quote" |
+|         |                       |              |
 
 ---
 
@@ -43,23 +46,24 @@ The promotion path (`hunch` → `emerging` → `strong`) requires actively tryin
 
 ### What would falsify this claim
 
-[The specific kind of finding that would contradict it. Not "no evidence", but actively contradictory evidence.]
+*The specific kind of finding that would contradict it. Not "no evidence" — actively contradictory evidence.*
 
 ### Who could falsify it
 
-[The slice of founder most likely to contradict it, if the claim isn't universal.]
+*The participant slice most likely to contradict, if the claim isn't universal.*
 
 ### Disconfirmation attempts so far
 
-[List sessions where we deliberately interviewed someone *likely* to contradict this. Note the outcome.]
+*List sessions where we deliberately interviewed someone likely to contradict. Note the outcome.*
 
+> [!TIP]
 > Mirrored and prioritised in `02-synthesis/probes.md`.
 
 ---
 
 ## Tags
 
-[#keywords for clustering into themes]
+*#keywords for clustering into themes.*
 
 ---
 
@@ -67,12 +71,12 @@ The promotion path (`hunch` → `emerging` → `strong`) requires actively tryin
 
 ### Feeds opportunity
 
-[Link to `02-synthesis/opportunities.md` entry, if any.]
+*Link to a `02-synthesis/opportunities.md` entry, if any.*
 
 ### Related insights
 
-[I-00Y, I-00Z]
+`I-00Y`, `I-00Z`
 
 ### Challenges assumption
 
-[From `00-context/problem-statement.md`, if any.]
+*From `00-context/problem-statement.md`, if any.*

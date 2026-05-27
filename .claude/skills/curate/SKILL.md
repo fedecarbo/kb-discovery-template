@@ -1,87 +1,111 @@
 ---
 name: curate
-description: Regenerate the living artifacts and refresh the README state-of-play. Use after N sessions (per 00-context/rhythm.md) or on demand. Regenerates themes / journey-map / story-map / stakeholder-map / personas / opportunities / INDEX.md, populates each one's "Sources at regeneration" footer, and refreshes the README delta-from-default. Does NOT touch raw transcripts or individual insight files.
+description: Regenerate the living artifacts and refresh the README state-of-play. Use after N sessions (per 01-research/method/cadence.md) or on demand. Regenerates themes / journey-map / story-map / stakeholder-map / personas / opportunities / INDEX.md, populates each one's "Sources at regeneration" footer, and refreshes the README delta-from-default. Does NOT touch raw transcripts or individual insight files.
 ---
 
 # Curator — regenerate the views over the evidence
 
+> [!NOTE]
+> You are running the **Curator** role from `README.md § Working with Claude — the four roles § Role C`. That section is the source of truth — if anything here drifts, defer to the README.
+
 ## What this skill does
 
-You are running the **Curator** role from `README.md § Working with Claude / Cowork § Role C`. That section is the source of truth — if anything here drifts, defer to the README.
+Curator operates *over* the evidence layer. You read what the Synthesist has produced — insights, sessions, probes, JTBDs — and regenerate the **living artifacts**: views rebuilt periodically so they never silently drift, because they're not hand-maintained between regenerations. You also refresh the README's "Current state of play" section as a delta from default.
 
-Curator operates *over* the evidence layer. You read what the Synthesist has produced — insights, sessions, probes, JTBDs — and regenerate the **living artifacts**: views that get rebuilt periodically and never silently drift, because they're not hand-maintained between regenerations. You also refresh the README's "Current state of play" section as a delta from default.
+> [!IMPORTANT]
+> You don't touch raw transcripts or individual insight files. Those are the source of truth; you regenerate views over them.
 
-You do **not** touch raw transcripts or individual insight files. Those are the source of truth; you're regenerating views over them.
+---
 
 ## When to use this skill
 
-- Cadence per `00-context/rhythm.md` (e.g. every N sessions).
-- Before a CPCA-facing output (readout, briefing, show-and-tell).
+- Cadence per `01-research/method/cadence.md` (e.g. every N sessions).
+- Before a stakeholder-facing output (readout, briefing, show-and-tell).
 - On demand when an artifact's "Sources at regeneration" footer is materially out of date.
+
+---
 
 ## Reads
 
 - All of `02-synthesis/`:
-  - `02-synthesis/insights/INDEX.md` and every `I-*.md`
-  - `02-synthesis/jobs-to-be-done.md`
-  - `02-synthesis/probes.md`
-  - The current state of the living artifacts you're regenerating
-- All of `00-context/` — sample-coverage, recruitment, consent-log, glossary, problem-statement, product-vision, discovery-questions, rhythm, personas
-- All `01-research/sessions/*/synthesis.md` — for cross-session patterns
+  - `02-synthesis/insights/INDEX.md` and every `I-*.md`.
+  - `02-synthesis/jobs-to-be-done.md`.
+  - `02-synthesis/probes.md`.
+  - The current state of the living artifacts you're regenerating.
+- All of `00-context/` — `problem-statement.md`, `product-vision.md`, `discovery-questions.md`.
+- All of `01-research/method/` — `cadence.md`, `coaching-log.md`, `recruitment.md`, `sample-coverage.md`, `consent-log.md`, `glossary.md`.
+- All `01-research/sessions/*/synthesis.md` — for cross-session patterns.
+
+---
 
 ## Writes
 
 - **`02-synthesis/insights/INDEX.md`** — regenerate as one-line-per-insight (ID, status, source count, last-updated, theme grouping). Mark any insight under tension with the flag noted in its file (e.g. ⚠ narrowing). Populate the **Sources at regeneration** footer.
-- **`02-synthesis/themes.md`** — regenerate emergent clusters from the current insight set. Headline + theme blocks + "Sources at regeneration" footer.
-- **`02-synthesis/journey-map.md`** — regenerate the current-state founder journey. Headline + stages + cross-cutting threads + gaps + footer.
-- **`02-synthesis/story-map.md`** — regenerate the future-solution backbone from JTBDs. Headline + backbone + footer. Each activity must cite ≥1 J-ID.
-- **`02-synthesis/stakeholder-map.md`** — regenerate the actor + relationship view. Headline + actors + relationships + gaps + footer.
+- **`02-synthesis/themes.md`** — regenerate emergent clusters from the current insight set. Headline + theme blocks + footer.
+- **`02-synthesis/journey-map.md`** — regenerate the current-state user journey. Headline + stages + cross-cutting threads + gaps + footer.
+- **`02-synthesis/story-map.md`** — regenerate the future-solution backbone from JTBDs. Headline + backbone + footer. Each activity must cite ≥1 `J-ID`.
+- **`02-synthesis/stakeholder-map.md`** — regenerate the actor and relationship view. Headline + actors + relationships + gaps + footer.
 - **`02-synthesis/personas.md`** — regenerate working models grounded in evidence. Headline + persona blocks + footer.
 - **`02-synthesis/opportunities.md`** — regenerate design openings from insights. Headline + opportunity blocks + prioritisation + footer. Each opportunity must cite ≥1 insight ID.
 - **`02-synthesis/probes.md`** — trim to top 2–3 priorities, not per-insight detail. Synthesist handles per-insight notes; Curator handles the trim.
 - **`README.md`** "Current state of play" — refresh as delta-from-default: where we are (one paragraph), pending human input (specific bullets), pointer index (where current state actually lives).
 
-## Footer convention (apply to every regenerated artifact)
+---
+
+## Footer convention
+
+Apply to every regenerated artifact. Populate the lists with real session and insight IDs; don't leave placeholders.
 
 ```markdown
 ---
 
 ## Sources at regeneration
 
-_Regenerated by Curator on <YYYY-MM-DD> from:_
+Regenerated by Curator on **YYYY-MM-DD** from:
+
 - **Sessions:** <list session IDs>
 - **Insights:** <list insight IDs>
 - **JTBDs:** <if applicable>
 
-> If the current insight or session list (see `02-synthesis/insights/INDEX.md` and `01-research/sessions/`) differs from the above, this artifact is stale — trigger a Curator regeneration before relying on it for outputs.
+> [!IMPORTANT]
+> If the current state of `02-synthesis/insights/INDEX.md` or `01-research/sessions/` differs from this list, the artifact is stale. Re-run `/curate` before relying on it.
 ```
 
-Populate the lists with current session IDs and insight IDs. Don't leave placeholders.
+---
 
-## Don't touch
+## Doesn't touch
 
 - Raw transcripts (`interview.md`, `reflection.md`).
 - Individual insight files (`02-synthesis/insights/I-*.md`) — those are Synthesist's. You can read them; you can't edit them.
 - The discovery method (`00-context/discovery-questions.md`, interviewing technique) — that's Coach's territory.
 - `*-review-*.md` files — those flow into Synthesist's second pass, not into your regeneration.
 
+---
+
 ## Hard rules
 
-- **Flag stale items; don't silently overwrite.** If you find an artifact whose footer shows older sources than what's currently in the project, regenerate it — but in your handoff note, name which artifacts you found stale and why.
-- **Cite IDs everywhere.** Every theme cluster lists insight IDs. Every JTBD cites session IDs or insight IDs. Every opportunity cites insight IDs. Every story-map activity cites J-IDs.
+> [!IMPORTANT]
+> These protect the integrity of the regenerated layer.
+
+- **Flag stale items; don't silently overwrite.** If you find an artifact whose footer shows older sources than the current project, regenerate it — but in your handoff note, name which artifacts you found stale and why.
+- **Cite IDs everywhere.** Every theme cluster lists insight IDs. Every JTBD cites session IDs or insight IDs. Every opportunity cites insight IDs. Every story-map activity cites `J-IDs`.
 - **Don't fabricate evidence to fill template gaps.** If the insight set is thin, the living artifact is thin. Note the thinness in "Gaps and unknowns" instead of inventing.
+
+---
 
 ## Model recommendation
 
 Opus. Cross-cutting synthesis over the whole evidence layer.
 
+---
+
 ## Done when
 
-- All living artifacts touched in this pass have a current "Sources at regeneration" footer with real session + insight IDs.
+- All living artifacts touched in this pass have a current "Sources at regeneration" footer with real session and insight IDs.
 - `02-synthesis/insights/INDEX.md` matches the current `I-*.md` set.
 - README "Current state of play" reflects the delta as of today.
-- A handoff note listing what was regenerated, what was found stale, and any flags that need human input.
+- A handoff note lists what was regenerated, what was found stale, and any flags that need human input.
 
 ---
 
-*Source of truth for this role is [README.md § Working with Claude / Cowork](../../../README.md).*
+*Source of truth for this role is [`README.md`](../../../README.md).*
